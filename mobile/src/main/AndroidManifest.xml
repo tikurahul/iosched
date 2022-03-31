@@ -42,7 +42,9 @@
 
         <activity
             android:name=".ui.LauncherActivity"
-            android:theme="@style/AppTheme.Launcher">
+            android:theme="@style/AppTheme.Launcher"
+            android:exported="true"
+            >
             <!-- This will have to be placed wherever the activity-alias is pointing to. -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,8 +59,8 @@
             </intent-filter>
          </activity>
 
-        <activity
-            android:name=".ui.MainActivity" >
+        <activity android:name=".ui.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.samples.apps.iosched.STARTUP_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />

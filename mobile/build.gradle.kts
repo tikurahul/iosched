@@ -76,7 +76,7 @@ android {
                 "google_maps_key",
                 "AIzaSyD5jqwKMm1SeoYsW25vxCXfTlhDBeZ4H5c"
             )
-
+            signingConfig = signingConfigs.getByName("debug")
             buildConfigField("String", "MAP_TILE_URL_BASE", "\"https://storage.googleapis.com/io2019-festivus-prod/images/maptiles\"")
         }
         getByName("debug") {
@@ -222,6 +222,7 @@ dependencies {
     implementation(Libs.COMPOSE_TOOLING)
     implementation(Libs.VIEWMODEL_COMPOSE)
     implementation(Libs.MDC_COMPOSE_THEME_ADAPTER)
+    implementation(Libs.PROFILE_INSTALLER)
     androidTestImplementation(Libs.COMPOSE_TEST)
 
     // Dagger Hilt

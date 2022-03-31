@@ -27,7 +27,7 @@ val cardview = "1.0.0"
 val archTesting = "2.0.0"
 val arcore = "1.7.0"
 val benchmark = "1.0.0"
-val benchmarkMacro = "1.1.0-alpha02"
+val benchmarkMacro = "1.2.0-SNAPSHOT"
 val browser = "1.0.0"
 val compose = Versions.COMPOSE
 val constraintLayout = "1.1.3"
@@ -64,6 +64,7 @@ val okhttp = "3.10.0"
 val okio = "1.14.0"
 val pageIndicator = "1.3.0"
 val playCore = "1.6.5"
+val profileInstaller = "1.2.0-SNAPSHOT"
 val room = "2.4.2"
 val rules = "1.1.1"
 val runner = "1.2.0"
@@ -142,6 +143,7 @@ dependencies {
         api("${Libs.OKHTTP_LOGGING_INTERCEPTOR}:$okhttp")
         api("${Libs.OKIO}:$okio")
         api("${Libs.INK_PAGE_INDICATOR}:$pageIndicator")
+        api("${Libs.PROFILE_INSTALLER}:$profileInstaller")
         api("${Libs.RULES}:$rules")
         api("${Libs.RUNNER}:$runner")
         api("${Libs.SLIDING_PANE_LAYOUT}:$slidingpanelayout")

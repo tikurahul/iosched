@@ -47,7 +47,10 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
-
+        // AndroidX.dev
+        maven {
+            url = uri("https://androidx.dev/snapshots/builds/8390167/artifacts/repository")
+        }
         // For Android Build Server
         // - Material Design Components
         maven { url = uri("${project.rootDir}/../iosched-prebuilts/repository") }

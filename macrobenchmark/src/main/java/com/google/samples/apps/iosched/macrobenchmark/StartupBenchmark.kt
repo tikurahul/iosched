@@ -30,9 +30,18 @@ class StartupBenchmark(private val startupMode: StartupMode) {
     @get:Rule
     val benchmarkRule = MacrobenchmarkRule()
 
+//    @Test
+//    fun startup() = benchmarkRule.measureStartup(
+//        profileCompiled = false,
+//        startupMode = startupMode,
+//        iterations = 3
+//    ) {
+//        action = "com.google.samples.apps.iosched.STARTUP_ACTIVITY"
+//    }
+
     @Test
-    fun startup() = benchmarkRule.measureStartup(
-        profileCompiled = false,
+    fun startupBaselineProfiles() = benchmarkRule.measureStartup(
+        profileCompiled = true,
         startupMode = startupMode,
         iterations = 3
     ) {
@@ -43,7 +52,7 @@ class StartupBenchmark(private val startupMode: StartupMode) {
         @Parameterized.Parameters(name = "mode={0}")
         @JvmStatic
         fun parameters(): List<Array<Any>> {
-            return listOf(StartupMode.COLD, StartupMode.WARM, StartupMode.HOT)
+            return listOf(StartupMode.COLD)
                 .map { arrayOf(it) }
         }
     }

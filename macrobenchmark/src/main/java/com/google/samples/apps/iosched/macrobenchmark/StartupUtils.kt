@@ -17,6 +17,7 @@
 package com.google.samples.apps.iosched.macrobenchmark
 
 import android.content.Intent
+import androidx.benchmark.macro.BaselineProfileMode
 import androidx.benchmark.macro.CompilationMode
 import androidx.benchmark.macro.StartupMode
 import androidx.benchmark.macro.StartupTimingMetric
@@ -33,14 +34,16 @@ fun MacrobenchmarkRule.measureStartup(
     packageName = TARGET_PACKAGE,
     metrics = listOf(StartupTimingMetric()),
     compilationMode = if (profileCompiled) {
-        CompilationMode.SpeedProfile(warmupIterations = 3)
+        CompilationMode.Partial(warmupIterations = 3)
     } else {
-        CompilationMode.None
+        CompilationMode.None()
     },
     iterations = iterations,
-    startupMode = startupMode
+    startupMode = startupMode,
+    setupBlock = {
+        pressHome(delayDurationMs = 1000)
+    }
 ) {
-    pressHome()
     val intent = Intent()
     intent.setPackage(TARGET_PACKAGE)
     setupIntent(intent)
